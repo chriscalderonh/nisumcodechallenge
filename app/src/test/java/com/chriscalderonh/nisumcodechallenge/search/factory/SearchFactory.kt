@@ -5,6 +5,8 @@ import com.chriscalderonh.nisumcodechallenge.search.data.remote.model.SearchResp
 import com.chriscalderonh.nisumcodechallenge.search.data.remote.model.SearchResult
 import com.chriscalderonh.nisumcodechallenge.search.domain.model.DomainResult
 import com.chriscalderonh.nisumcodechallenge.search.domain.model.DomainSearch
+import com.chriscalderonh.nisumcodechallenge.search.presentation.model.UiResult
+import com.chriscalderonh.nisumcodechallenge.search.presentation.model.UiSearch
 
 object SearchFactory {
 
@@ -66,4 +68,21 @@ object SearchFactory {
             RandomValuesFactory.generateInt(),
             RandomValuesFactory.generateString(),
             RandomValuesFactory.generateString())
+
+    fun generateUiSearch() = UiSearch(
+            RandomValuesFactory.generateInt(),
+            generateUiResultList())
+
+    private fun generateUiResultList() = (0..10).map { generateUiResult() }
+
+    private fun generateUiResult() = UiResult(
+            RandomValuesFactory.generateString(),
+            RandomValuesFactory.generateString(),
+            RandomValuesFactory.generateString(),
+            RandomValuesFactory.generateString(),
+            RandomValuesFactory.generateInt(),
+            RandomValuesFactory.generateString(),
+            RandomValuesFactory.generateString())
+
+
 }

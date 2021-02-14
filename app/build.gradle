@@ -2,8 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
 }
-
 // Android application version definition
 def versionMajor = 1
 def versionMinor = 0
@@ -44,11 +44,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     def nav_version = "2.3.3"
     def rxkotlin_version = "2.3.0"
+    def rxandroid_version = "2.1.0"
     def dagger_version = "2.27"
     def retrofit_version = "2.9.0"
     def logging_interceptor_version = "4.9.0"
@@ -68,6 +72,7 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
