@@ -4,10 +4,11 @@ import com.chriscalderonh.nisumcodechallenge.search.data.remote.model.SearchResp
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface SearchRestApi {
 
-    @GET("search?term={searchText}&media=music&limit=20&offset={page}")
-    fun searchMusic(@Path("searchText") searchText: String,
-                    @Path("page") page: Int): Single<SearchResponse>
+    @GET("search?media=music&limit=20")
+    fun searchMusic(@Query("term") searchText: String,
+                    @Query("offset") page: Int): Single<SearchResponse>
 }

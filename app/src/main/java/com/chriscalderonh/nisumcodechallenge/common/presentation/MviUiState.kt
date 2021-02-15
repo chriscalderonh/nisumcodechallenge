@@ -1,0 +1,3 @@
+package com.chriscalderonh.nisumcodechallenge.common.presentation
+
+interface MviUiState

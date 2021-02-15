@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvSearchLabel"
+        style="@style/Font_24sp_Primary_Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="?actionBarSize"
+        android:paddingTop="16dp"
+        android:text="@string/search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/artists_songs_and_more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSearchLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSearchText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvResults"
+        tools:listitem="@layout/view_result_item"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilSearch" />
+
+    <com.chriscalderonh.nisumcodechallenge.common.ui.components.LoadingView
+        android:id="@+id/lvSearchLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.chriscalderonh.nisumcodechallenge.common.ui.components.ErrorView
+        android:id="@+id/evSearchError"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>
