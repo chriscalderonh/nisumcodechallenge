@@ -12,6 +12,7 @@
 
     <color name="primary_text">#212529</color>
     <color name="secondary_text">#6c757d</color>
+    <color name="accent_text">#e63946</color>
 
     <color name="light_grey">#adb5bd</color>
 

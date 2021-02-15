@@ -6,6 +6,7 @@ import com.chriscalderonh.nisumcodechallenge.common.presentation.execution.AppEx
 import com.chriscalderonh.nisumcodechallenge.common.presentation.execution.ExecutionThread
 import com.chriscalderonh.nisumcodechallenge.di.ViewModelFactory
 import com.chriscalderonh.nisumcodechallenge.di.ViewModelKey
+import com.chriscalderonh.nisumcodechallenge.search.presentation.CollectionViewModel
 import com.chriscalderonh.nisumcodechallenge.search.presentation.SearchViewModel
 import dagger.Binds
 import dagger.Module
@@ -25,4 +26,10 @@ abstract class PresentationModule {
     @ViewModelKey(SearchViewModel::class)
     abstract fun bindSearchViewModel(
         viewModel: SearchViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CollectionViewModel::class)
+    abstract fun bindCollectionViewModel(
+        viewModel: CollectionViewModel): ViewModel
 }

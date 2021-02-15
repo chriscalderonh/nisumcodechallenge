@@ -1,6 +1,7 @@
 package com.chriscalderonh.nisumcodechallenge.search.presentation.di
 
 import com.chriscalderonh.nisumcodechallenge.di.ActivityScope
+import com.chriscalderonh.nisumcodechallenge.search.ui.AlbumTracksFragment
 import com.chriscalderonh.nisumcodechallenge.search.ui.SearchActivity
 import com.chriscalderonh.nisumcodechallenge.search.ui.SearchFragment
 import dagger.Component
@@ -14,4 +15,6 @@ interface SearchComponent {
     fun inject(searchActivity: SearchActivity)
 
     fun inject(searchFragment: SearchFragment)
+
+    fun inject(albumTracksFragment: AlbumTracksFragment)
 }
