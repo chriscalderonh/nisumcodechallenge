@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Nisum Code Challenge</string>
+    <string name="search">Buscar</string>
+    <string name="dot">·</string>
+    <string name="artists_songs_and_more">Artistas, canciones y más</string>
+    <string name="perform_search">Realizar búsqueda</string>
+    <string name="sorry_an_error_occurred">Lo sentimos se produjo un error</string>
+    <string name="s_continue">Continuar</string>
 </resources>

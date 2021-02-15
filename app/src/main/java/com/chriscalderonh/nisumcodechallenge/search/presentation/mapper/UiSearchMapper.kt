@@ -5,8 +5,9 @@ import com.chriscalderonh.nisumcodechallenge.search.domain.model.DomainSearch
 import com.chriscalderonh.nisumcodechallenge.search.presentation.Constants.DEFAULT_INT_VALUE
 import com.chriscalderonh.nisumcodechallenge.search.presentation.model.UiResult
 import com.chriscalderonh.nisumcodechallenge.search.presentation.model.UiSearch
+import javax.inject.Inject
 
-class UiSearchMapper {
+class UiSearchMapper @Inject constructor() {
 
     fun DomainSearch.fromDomainToUi() = UiSearch(
         resultCount = resultCount ?: DEFAULT_INT_VALUE,
