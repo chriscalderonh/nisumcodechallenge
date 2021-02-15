@@ -3,6 +3,7 @@ package com.chriscalderonh.nisumcodechallenge.search.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.chriscalderonh.nisumcodechallenge.databinding.ViewResultItemBinding
 import com.chriscalderonh.nisumcodechallenge.search.presentation.model.UiResult
@@ -17,8 +18,6 @@ class SearchResultListAdapter @Inject constructor() :
             notifyDataSetChanged()
         }
 
-    var onItemClickListener: View.OnClickListener = View.OnClickListener {}
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(
             ViewResultItemBinding.inflate(
@@ -28,7 +27,7 @@ class SearchResultListAdapter @Inject constructor() :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = searchItems[position]
-        holder.bind(item, onItemClickListener)
+        holder.bind(item)
     }
 
     override fun getItemCount(): Int = searchItems.size
@@ -36,12 +35,15 @@ class SearchResultListAdapter @Inject constructor() :
     inner class ViewHolder(private val binding: ViewResultItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: UiResult, clickItemListener: View.OnClickListener) {
+        fun bind(item: UiResult) {
             binding.apply {
                 tvItemArtistName.text = item.artistName
                 tvItemAlbumName.text = item.collectionName
                 tvItemName.text = item.trackName
-                clItem.setOnClickListener { clickItemListener }
+                clItem.setOnClickListener { view ->
+                        val directions = SearchFragmentDirections.actionSearchFragmentToAlbumTracksFragment(item.collectionId.toString())
+                        view.findNavController().navigate(directions)
+                }
             }
         }
     }

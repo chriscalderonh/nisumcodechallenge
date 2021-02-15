@@ -45,7 +45,7 @@ class SearchViewModel @Inject constructor(
                     GetSearchResultsMusicResult.InProgress -> SearchUiState.Loading
                     is GetSearchResultsMusicResult.Success ->
                         SearchUiState.SuccessGettingSearchResults(
-                            with(uiSearchMapper) { result.listProductModel.fromDomainToUi() })
+                            with(uiSearchMapper) { result.domainSearch.fromDomainToUi() })
                     is GetSearchResultsMusicResult.Error ->
                         SearchUiState.ErrorGettingSearchResults(result.error.message)
                 }

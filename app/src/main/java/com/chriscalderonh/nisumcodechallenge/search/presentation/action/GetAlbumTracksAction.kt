@@ -1,4 +1,6 @@
 package com.chriscalderonh.nisumcodechallenge.search.presentation.action
 
-class GetAlbumTracksAction {
+sealed class GetAlbumTracksAction {
+
+    data class GetListOfTracksAction(val collectionId: String) : GetAlbumTracksAction()
 }

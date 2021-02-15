@@ -6,7 +6,7 @@ sealed class SearchMusicResult {
 
     sealed class GetSearchResultsMusicResult: SearchMusicResult() {
         object InProgress: GetSearchResultsMusicResult()
-        data class Success(val listProductModel: DomainSearch): GetSearchResultsMusicResult()
+        data class Success(val domainSearch: DomainSearch): GetSearchResultsMusicResult()
         data class Error(val error: Throwable): GetSearchResultsMusicResult()
     }
 }

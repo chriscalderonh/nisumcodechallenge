@@ -12,9 +12,19 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="Font_18sp_Accent">
+        <item name="android:textColor">@color/accent_text</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="Font_14sp_Secondary">
         <item name="android:textColor">@color/secondary_text</item>
         <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Font_12sp_Secondary">
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
 

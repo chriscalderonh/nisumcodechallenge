@@ -1,4 +1,8 @@
 package com.chriscalderonh.nisumcodechallenge.search.presentation.userintent
 
-class CollectionUserIntent {
+import com.chriscalderonh.nisumcodechallenge.common.presentation.MviUserIntent
+
+sealed class CollectionUserIntent : MviUserIntent {
+
+    data class InitialUserIntent(val collectionId: String): CollectionUserIntent()
 }
